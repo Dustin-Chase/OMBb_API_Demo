@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>How-To Guide for Using the OMBb Web API</title>
+    <title>How-To Guide for Using the OMDb Web API</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -47,21 +47,22 @@
           <div class="blog-post">
             <h2 class="blog-post-title">Showing How the Raw Data Can Be Used</h2>
  
-
+		<p>
+		This is a simple demonstration of how to use the data you get back from the API. You enter a title below and you get back 
+		an unordered list of matching entries.
+		</p>
         <form id="search">
 		<br>
-		Test Search By Title<br>
+		Search By Search<br>
 		<br>
 		Title<input type="text" name="title" id="title"><br>
-		<br>
-		Year<input type="text" id="year"><br>
-		<br>
 		<br>
 		<button onclick="javascript:search();">Search</button>
 		</form>
 		
 		<div id="searchResults">
 		Search Results
+		<img src="/images/loading.gif" id="loading-indicator" style="display:none" />
 		</div>
          </div><!-- /.blog-post -->
 

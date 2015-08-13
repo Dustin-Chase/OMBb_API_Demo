@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>How-To Guide for Using the OMBb Web API</title>
+    <title>How-To Guide for Using the OMDb Web API</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,7 +37,7 @@
     <div class="container">
 
       <div class="blog-header">
-        <h1 class="blog-title">How to Use the OMBb Web API</h1>
+        <h1 class="blog-title">How to Use the OMDb Web API</h1>
         <p class="lead blog-description">by Dustin Chase</p>
       </div>
 
@@ -49,16 +49,16 @@
             <h2 class="blog-post-title">About This Guide</h2>
  
 
-            <p>Welcome to my How-To guide for the OMBb Web API.</p>
+            <p>Welcome to my How-To guide for the OMDb Web API.</p>
    
             <p>
-			The OMBb Web API is a way to access information about film and television shows. Examples of the data you can access are year of release, plot summary, and actors. 
-			In this guide we will look at the types of searches ou can do and what sorts of data these searches return. There is also a demonstration page which shows an example of what
+			The OMDb Web API is a way to access information about film and television shows. Examples of the data you can access are year of release, plot summary, and actors. 
+			In this guide we will look at the types of searches you can do and what sorts of data these searches return. There is also a demonstration page which shows an example of what
 			you can do with this data.
 			</p>
             
             <p>
-			The OMBb Web API returns data in either JSON or XML objects returned from search queries. We will use JavaScript to retrieve these search results so we can 
+			The OMDb Web API returns data in either JSON or XML objects returned from search queries. We will use JavaScript to retrieve these search results so we can 
 			avoid re-loading the page to return search results. For simplicity we will just be looking at JSON results but the XML format might serve your purpose better. 
 			</p>
 			

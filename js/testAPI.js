@@ -29,22 +29,26 @@ function search() {
 	event.preventDefault();
 	var response_text;
 	var title = document.getElementById("title").value;
-	var URL = "http://www.omdbapi.com/?s=" + title;
-	var httpRequest = createHttpRequestObject(); 
-	httpRequest.onreadystatechange = function() {
-		if (httpRequest.readyState != 4) {
-			return; 
-		}
-		if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-			response_text = JSON.parse(httpRequest.responseText);
-			display(response_text);
-		} else {
-			alert('There was a problem with the request.'); 
-		}
+	if (!title)
+		document.getElementById("searchResults").innerHTML = "You must enter a title!";
+	else {
+		var URL = "http://www.omdbapi.com/?s=" + title;
+		var httpRequest = createHttpRequestObject(); 
+		httpRequest.onreadystatechange = function() {
+			if (httpRequest.readyState != 4) {
+				return; 
+			}
+			if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+				response_text = JSON.parse(httpRequest.responseText);
+				display(response_text);
+			} else {
+				alert('There was a problem with the request.'); 
+			}
 
+		}
+		httpRequest.open("GET", URL, true);
+		httpRequest.send();
 	}
-	httpRequest.open("GET", URL, true);
-	httpRequest.send();
 }
 
 function display(text) {	
@@ -62,5 +66,13 @@ function display(text) {
 	
 	search_results.innerHTML=output; 
 }
+
+$(document).ajaxSend(function(event, request, settings) {
+  $('#loading-indicator').show();
+});
+
+$(document).ajaxComplete(function(event, request, settings) {
+  $('#loading-indicator').hide();
+});
 
 
